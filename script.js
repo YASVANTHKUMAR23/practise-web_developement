@@ -90,3 +90,19 @@ form.addEventListener("submit", (event) => {
     output.style.display = "block";
 
 });
+
+let count = 0;
+const countEl = document.getElementById("count");
+const incBtn = document.getElementById("inc");
+const decBtn = document.getElementById("dec");
+
+if (incBtn && decBtn && countEl) {
+  incBtn.addEventListener("click", () => {
+    count++;
+    countEl.textContent = count;
+  });
+  decBtn.addEventListener("click", () => {
+    count--;
+    countEl.textContent = count;
+  });
+}
