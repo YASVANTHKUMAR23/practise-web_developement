@@ -67,3 +67,31 @@ padding: 30px;
   margin-bottom: 10px;
   color: #2d3e50;
 }
+
+.counter {
+  margin-top: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+}
+
+.counter button {
+  width: 40px;
+  height: 40px;
+  font-size: 20px;
+  border: none;
+  border-radius: 6px;
+  background: #3498db;
+  color: #fff;
+  cursor: pointer;
+}
+
+.counter button:hover {
+  background: #217dbb;
+}
+
+#count {
+  font-size: 24px;
+  min-width: 40px;
+}
