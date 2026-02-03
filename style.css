@@ -102,3 +102,26 @@ padding: 30px;
     padding: 12px;
   }
 }
+
+.site-header {
+  background: #2d3e50;
+  color: #fff;
+  padding: 15px 20px;
+  text-align: center;
+}
+
+.site-header nav {
+  margin-top: 10px;
+}
+
+.site-header nav a {
+  color: #fff;
+  text-decoration: none;
+  margin: 0 10px;
+  padding-bottom: 3px;
+  border-bottom: 2px solid transparent;
+}
+
+.site-header nav a:hover {
+  border-bottom-color: #3498db;
+}
