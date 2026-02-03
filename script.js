@@ -106,3 +106,11 @@ if (incBtn && decBtn && countEl) {
     countEl.textContent = count;
   });
 }
+
+// Press "r" to reset the counter
+document.addEventListener("keydown", (e) => {
+  if (e.key === "r" && countEl) {
+    count = 0;
+    countEl.textContent = count;
+  }
+});
