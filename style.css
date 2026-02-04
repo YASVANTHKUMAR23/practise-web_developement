@@ -125,3 +125,9 @@ padding: 30px;
 .site-header nav a:hover {
   border-bottom-color: #3498db;
 }
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.5;
+}
