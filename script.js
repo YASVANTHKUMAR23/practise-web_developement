@@ -114,3 +114,18 @@ document.addEventListener("keydown", (e) => {
     countEl.textContent = count;
   }
 });
+
+// ---------- Todo list ----------
+const todoInput = document.getElementById("todo-input");
+const todoBtn = document.getElementById("todo-btn");
+const todoList = document.getElementById("todo-list");
+
+function addTodo() {
+  const text = todoInput.value;
+  const li = document.createElement("li");
+  li.textContent = text;
+  todoList.appendChild(li);
+}
+
+todoBtn.addEventListener("click", addTodo);
+// ---------- end todo list ----------
