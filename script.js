@@ -121,10 +121,15 @@ const todoBtn = document.getElementById("todo-btn");
 const todoList = document.getElementById("todo-list");
 
 function addTodo() {
-  const text = todoInput.value;
+  const text = todoInput.value.trim();
+  if (text === "") {
+    alert("Please type a task first");
+    return;
+  }
   const li = document.createElement("li");
   li.textContent = text;
   todoList.appendChild(li);
+  todoInput.value = "";
 }
 
 todoBtn.addEventListener("click", addTodo);
