@@ -91,6 +91,8 @@ form.addEventListener("submit", (event) => {
 
 });
 
+const MAX_COUNT = 100;
+const MIN_COUNT = -100;
 let count = 0;
 const countEl = document.getElementById("count");
 const incBtn = document.getElementById("inc");
@@ -98,11 +100,11 @@ const decBtn = document.getElementById("dec");
 
 if (incBtn && decBtn && countEl) {
   incBtn.addEventListener("click", () => {
-    count++;
+    count = Math.min(count + 1, MAX_COUNT);
     countEl.textContent = count;
   });
   decBtn.addEventListener("click", () => {
-    count--;
+    count = Math.max(count - 1, MIN_COUNT);
     countEl.textContent = count;
   });
 }
