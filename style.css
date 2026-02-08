@@ -166,3 +166,10 @@ body {
   padding: 8px;
   border-bottom: 1px solid #eee;
 }
+
+.counter #reset {
+  width: auto;
+  padding: 0 12px;
+  font-size: 14px;
+  background: #95a5a6;
+}

@@ -134,3 +134,13 @@ function addTodo() {
 
 todoBtn.addEventListener("click", addTodo);
 // ---------- end todo list ----------
+
+// ---------- Counter reset button ----------
+const resetBtn = document.getElementById("reset");
+
+if (resetBtn && countEl) {
+  resetBtn.addEventListener("click", () => {
+    count = 0;
+    countEl.textContent = count;
+  });
+}
