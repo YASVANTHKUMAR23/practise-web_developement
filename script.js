@@ -109,7 +109,7 @@ if (incBtn && decBtn && countEl) {
 
 // Press "r" to reset the counter
 document.addEventListener("keydown", (e) => {
-  if (e.key === "r" && countEl) {
+  if (e.key === "r" && countEl && !["INPUT", "TEXTAREA"].includes(e.target.tagName)) {
     count = 0;
     countEl.textContent = count;
   }
