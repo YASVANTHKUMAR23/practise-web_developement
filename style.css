@@ -173,3 +173,7 @@ body {
   font-size: 14px;
   background: #95a5a6;
 }
+
+html {
+  scroll-behavior: smooth;
+}
