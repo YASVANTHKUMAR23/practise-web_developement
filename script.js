@@ -146,3 +146,5 @@ if (resetBtn && countEl) {
     countEl.textContent = count;
   });
 }
+
+document.getElementById("year").textContent = new Date().getFullYear();
