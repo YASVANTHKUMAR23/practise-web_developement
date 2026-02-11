@@ -193,3 +193,12 @@ html {
   font-size: 12px;
   background: #e74c3c;
 }
+
+.todo li {
+  cursor: pointer;
+}
+
+.todo li.done {
+  text-decoration: line-through;
+  color: #888;
+}

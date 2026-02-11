@@ -136,6 +136,10 @@ function addTodo() {
   delBtn.className = "delete-btn";
   delBtn.addEventListener("click", () => li.remove());
   li.appendChild(delBtn);
+
+  li.addEventListener("click", () => {
+    li.classList.toggle("done");
+  });
   todoList.appendChild(li);
   todoInput.value = "";
 }
