@@ -130,6 +130,12 @@ function addTodo() {
   }
   const li = document.createElement("li");
   li.textContent = text;
+
+  const delBtn = document.createElement("button");
+  delBtn.textContent = "Delete";
+  delBtn.className = "delete-btn";
+  delBtn.addEventListener("click", () => li.remove());
+  li.appendChild(delBtn);
   todoList.appendChild(li);
   todoInput.value = "";
 }

@@ -186,3 +186,10 @@ html {
   text-align: center;
   font-size: 14px;
 }
+
+.todo li .delete-btn {
+  float: right;
+  padding: 4px 8px;
+  font-size: 12px;
+  background: #e74c3c;
+}
