@@ -148,3 +148,12 @@ if (resetBtn && countEl) {
 }
 
 document.getElementById("year").textContent = new Date().getFullYear();
+
+// ---------- Footer clock ----------
+function updateClock() {
+  const el = document.getElementById("clock");
+  if (el) el.textContent = new Date().toLocaleTimeString();
+}
+
+updateClock();
+setInterval(updateClock, 1000);
