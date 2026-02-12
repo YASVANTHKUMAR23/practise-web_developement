@@ -145,6 +145,9 @@ function addTodo() {
 }
 
 todoBtn.addEventListener("click", addTodo);
+todoInput.addEventListener("keydown", (e) => {
+  if (e.key === "Enter") addTodo();
+});
 // ---------- end todo list ----------
 
 // ---------- Counter reset button ----------
