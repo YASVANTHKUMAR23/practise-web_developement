@@ -121,12 +121,33 @@ document.addEventListener("keydown", (e) => {
 const todoInput = document.getElementById("todo-input");
 const todoBtn = document.getElementById("todo-btn");
 const todoList = document.getElementById("todo-list");
-
 const todoCount = document.getElementById("todo-count");
 
-function updateCount() {
-  const n = todoList.children.length;
-  todoCount.textContent = n + (n === 1 ? " task" : " tasks");
+let todos = [];
+
+function render() {
+  todoList.innerHTML = "";
+
+  todos.forEach((todo, index) => {
+    const li = document.createElement("li");
+    li.textContent = todo.text;
+    if (todo.done) li.classList.add("done");
+
+    li.addEventListener("click", () => toggleTodo(index));
+
+    const delBtn = document.createElement("button");
+    delBtn.textContent = "Delete";
+    delBtn.className = "delete-btn";
+    delBtn.addEventListener("click", (e) => {
+      e.stopPropagation();
+      deleteTodo(index);
+    });
+
+    li.appendChild(delBtn);
+    todoList.appendChild(li);
+  });
+
+  todoCount.textContent = todos.length + (todos.length === 1 ? " task" : " tasks");
 }
 
 function addTodo() {
@@ -135,24 +156,19 @@ function addTodo() {
     alert("Please type a task first");
     return;
   }
-  const li = document.createElement("li");
-  li.textContent = text;
-
-  const delBtn = document.createElement("button");
-  delBtn.textContent = "Delete";
-  delBtn.className = "delete-btn";
-  delBtn.addEventListener("click", () => {
-    li.remove();
-    updateCount();
-  });
-  li.appendChild(delBtn);
-
-  li.addEventListener("click", () => {
-    li.classList.toggle("done");
-  });
-  todoList.appendChild(li);
+  todos.push({ text: text, done: false });
   todoInput.value = "";
-  updateCount();
+  render();
+}
+
+function toggleTodo(index) {
+  todos[index].done = !todos[index].done;
+  render();
+}
+
+function deleteTodo(index) {
+  todos.splice(index, 1);
+  render();
 }
 
 todoBtn.addEventListener("click", addTodo);
