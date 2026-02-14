@@ -210,3 +210,9 @@ button {
 button:active {
   transform: scale(0.97);
 }
+
+.todo-count {
+  margin-top: 10px;
+  font-size: 14px;
+  color: #666;
+}

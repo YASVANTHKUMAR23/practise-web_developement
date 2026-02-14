@@ -122,6 +122,13 @@ const todoInput = document.getElementById("todo-input");
 const todoBtn = document.getElementById("todo-btn");
 const todoList = document.getElementById("todo-list");
 
+const todoCount = document.getElementById("todo-count");
+
+function updateCount() {
+  const n = todoList.children.length;
+  todoCount.textContent = n + (n === 1 ? " task" : " tasks");
+}
+
 function addTodo() {
   const text = todoInput.value.trim();
   if (text === "") {
@@ -134,7 +141,10 @@ function addTodo() {
   const delBtn = document.createElement("button");
   delBtn.textContent = "Delete";
   delBtn.className = "delete-btn";
-  delBtn.addEventListener("click", () => li.remove());
+  delBtn.addEventListener("click", () => {
+    li.remove();
+    updateCount();
+  });
   li.appendChild(delBtn);
 
   li.addEventListener("click", () => {
@@ -142,6 +152,7 @@ function addTodo() {
   });
   todoList.appendChild(li);
   todoInput.value = "";
+  updateCount();
 }
 
 todoBtn.addEventListener("click", addTodo);
