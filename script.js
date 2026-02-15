@@ -156,6 +156,11 @@ function addTodo() {
     alert("Please type a task first");
     return;
   }
+  const isDuplicate = todos.some((t) => t.text.toLowerCase() === text.toLowerCase());
+  if (isDuplicate) {
+    alert("That task already exists");
+    return;
+  }
   todos.push({ text: text, done: false });
   todoInput.value = "";
   todoInput.focus();
