@@ -158,6 +158,7 @@ function addTodo() {
   }
   todos.push({ text: text, done: false });
   todoInput.value = "";
+  todoInput.focus();
   render();
 }
 
