@@ -141,6 +141,7 @@ function render() {
   todos.forEach((todo, index) => {
     const li = document.createElement("li");
     li.textContent = todo.text;
+    if (todo.created) li.title = "Added " + new Date(todo.created).toLocaleString();
     if (todo.done) li.classList.add("done");
 
     li.addEventListener("click", () => toggleTodo(index));
@@ -172,7 +173,7 @@ function addTodo() {
     alert("That task already exists");
     return;
   }
-  todos.push({ text: text, done: false });
+  todos.push({ text: text, done: false, created: Date.now() });
   todoInput.value = "";
   todoInput.focus();
   render();
