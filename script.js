@@ -125,6 +125,16 @@ const todoCount = document.getElementById("todo-count");
 
 let todos = [];
 
+try {
+  todos = JSON.parse(localStorage.getItem("todos")) || [];
+} catch (err) {
+  todos = [];
+}
+
+function saveTodos() {
+  localStorage.setItem("todos", JSON.stringify(todos));
+}
+
 function render() {
   todoList.innerHTML = "";
 
@@ -148,6 +158,7 @@ function render() {
   });
 
   todoCount.textContent = todos.length + (todos.length === 1 ? " task" : " tasks");
+  saveTodos();
 }
 
 function addTodo() {
@@ -176,6 +187,8 @@ function deleteTodo(index) {
   todos.splice(index, 1);
   render();
 }
+
+render();
 
 todoBtn.addEventListener("click", addTodo);
 todoInput.addEventListener("keydown", (e) => {
