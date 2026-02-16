@@ -217,3 +217,25 @@ function updateClock() {
 
 updateClock();
 setInterval(updateClock, 1000);
+
+// ---------- Dark mode ----------
+const themeBtn = document.getElementById("theme-toggle");
+
+function applyTheme(theme) {
+  document.body.classList.toggle("dark", theme === "dark");
+  themeBtn.textContent = theme === "dark" ? "Light mode" : "Dark mode";
+}
+
+let savedTheme = "light";
+try {
+  savedTheme = localStorage.getItem("theme") || "light";
+} catch (err) {}
+applyTheme(savedTheme);
+
+themeBtn.addEventListener("click", () => {
+  const next = document.body.classList.contains("dark") ? "light" : "dark";
+  applyTheme(next);
+  try {
+    localStorage.setItem("theme", next);
+  } catch (err) {}
+});
