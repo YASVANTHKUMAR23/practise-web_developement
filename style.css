@@ -258,3 +258,16 @@ textarea:focus {
   outline: 2px solid #3498db;
   outline-offset: 1px;
 }
+
+.filters {
+  margin-top: 15px;
+}
+
+.filters button {
+  margin-right: 5px;
+  background: #95a5a6;
+}
+
+.filters button.active {
+  background: #2c3e50;
+}

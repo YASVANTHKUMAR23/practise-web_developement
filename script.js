@@ -124,6 +124,7 @@ const todoList = document.getElementById("todo-list");
 const todoCount = document.getElementById("todo-count");
 
 let todos = [];
+let currentFilter = "all";
 
 try {
   todos = JSON.parse(localStorage.getItem("todos")) || [];
@@ -139,6 +140,8 @@ function render() {
   todoList.innerHTML = "";
 
   todos.forEach((todo, index) => {
+    if (currentFilter === "active" && todo.done) return;
+    if (currentFilter === "done" && !todo.done) return;
     const li = document.createElement("li");
     li.textContent = todo.text;
     if (todo.created) li.title = "Added " + new Date(todo.created).toLocaleString();
@@ -190,6 +193,15 @@ function deleteTodo(index) {
 }
 
 render();
+
+document.querySelectorAll(".filters button").forEach((btn) => {
+  btn.addEventListener("click", () => {
+    currentFilter = btn.dataset.filter;
+    document.querySelectorAll(".filters button").forEach((b) => b.classList.remove("active"));
+    btn.classList.add("active");
+    render();
+  });
+});
 
 todoBtn.addEventListener("click", addTodo);
 todoInput.addEventListener("keydown", (e) => {

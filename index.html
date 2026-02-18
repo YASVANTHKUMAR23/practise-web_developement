@@ -30,6 +30,11 @@
     <h2>My Todo List</h2>
     <input type="text" id="todo-input" placeholder="Enter a task" maxlength="60">
     <button id="todo-btn">Add</button>
+    <div class="filters">
+      <button data-filter="all" class="active">All</button>
+      <button data-filter="active">Active</button>
+      <button data-filter="done">Completed</button>
+    </div>
     <ul id="todo-list"></ul>
     <p id="todo-count" class="todo-count">0 tasks</p>
   </section>
