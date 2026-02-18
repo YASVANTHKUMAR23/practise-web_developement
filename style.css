@@ -252,3 +252,9 @@ body.dark .todo input {
 body.dark .todo li {
   border-bottom-color: #444;
 }
+
+input:focus,
+textarea:focus {
+  outline: 2px solid #3498db;
+  outline-offset: 1px;
+}
