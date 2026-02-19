@@ -155,7 +155,9 @@ function render() {
     delBtn.className = "delete-btn";
     delBtn.addEventListener("click", (e) => {
       e.stopPropagation();
-      deleteTodo(index);
+      if (confirm("Delete this task?")) {
+        deleteTodo(index);
+      }
     });
 
     li.appendChild(delBtn);
