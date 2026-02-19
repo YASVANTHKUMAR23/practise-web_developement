@@ -138,6 +138,7 @@ function saveTodos() {
 
 function render() {
   todoList.innerHTML = "";
+  document.getElementById("empty-msg").style.display = todos.length === 0 ? "block" : "none";
 
   todos.forEach((todo, index) => {
     if (currentFilter === "active" && todo.done) return;

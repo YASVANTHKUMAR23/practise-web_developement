@@ -271,3 +271,9 @@ textarea:focus {
 .filters button.active {
   background: #2c3e50;
 }
+
+.empty-msg {
+  margin-top: 12px;
+  color: #888;
+  font-style: italic;
+}
