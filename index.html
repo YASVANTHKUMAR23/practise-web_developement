@@ -12,6 +12,7 @@
     <nav>
       <a href="#counter">Counter</a>
       <a href="#todos">Todos</a>
+      <a href="#contact">Contact</a>
       <a href="#about">About</a>
     </nav>
     <button id="theme-toggle" class="theme-toggle">Dark mode</button>
@@ -38,6 +39,26 @@
     </div>
     <ul id="todo-list"></ul>
     <p id="todo-count" class="todo-count">0 tasks</p>
+  </section>
+
+  <section class="contact" id="contact">
+    <h2>Contact Form</h2>
+    <form id="contact-form" novalidate>
+      <label for="name">Name</label>
+      <input type="text" id="name" name="name">
+      <span class="error" id="name-error"></span>
+
+      <label for="email">Email</label>
+      <input type="email" id="email" name="email">
+      <span class="error" id="email-error"></span>
+
+      <label for="message">Message</label>
+      <textarea id="message" name="message" rows="4"></textarea>
+      <span class="error" id="message-error"></span>
+
+      <button type="submit">Send</button>
+      <p id="form-status"></p>
+    </form>
   </section>
 
   <footer class="site-footer">
