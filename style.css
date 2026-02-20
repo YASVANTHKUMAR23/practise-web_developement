@@ -342,3 +342,9 @@ body.dark .contact textarea {
   color: #eee;
   border-color: #555;
 }
+
+.char-count {
+  align-self: flex-end;
+  font-size: 12px;
+  color: #888;
+}

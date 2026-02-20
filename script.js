@@ -254,3 +254,15 @@ themeBtn.addEventListener("click", () => {
     localStorage.setItem("theme", next);
   } catch (err) {}
 });
+
+// ---------- Message character counter ----------
+const messageBox = document.getElementById("message");
+const charCount = document.getElementById("char-count");
+
+messageBox.addEventListener("input", () => {
+  charCount.textContent = messageBox.value.length + " / 200";
+});
+
+document.getElementById("contact-form").addEventListener("reset", () => {
+  charCount.textContent = "0 / 200";
+});

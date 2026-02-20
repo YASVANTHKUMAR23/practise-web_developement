@@ -53,8 +53,9 @@
       <span class="error" id="email-error"></span>
 
       <label for="message">Message</label>
-      <textarea id="message" name="message" rows="4"></textarea>
+      <textarea id="message" name="message" rows="4" maxlength="200"></textarea>
       <span class="error" id="message-error"></span>
+      <small id="char-count" class="char-count">0 / 200</small>
 
       <button type="submit">Send</button>
       <p id="form-status"></p>
