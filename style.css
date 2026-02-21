@@ -348,3 +348,9 @@ body.dark .contact textarea {
   font-size: 12px;
   color: #888;
 }
+
+.greeting {
+  margin-top: 6px;
+  font-size: 14px;
+  opacity: 0.85;
+}
