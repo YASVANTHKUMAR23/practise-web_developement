@@ -266,3 +266,53 @@ messageBox.addEventListener("input", () => {
 document.getElementById("contact-form").addEventListener("reset", () => {
   charCount.textContent = "0 / 200";
 });
+
+// ---------- Contact form ----------
+const contactForm = document.getElementById("contact-form");
+
+function setError(id, message) {
+  document.getElementById(id + "-error").textContent = message;
+  document.getElementById(id).classList.toggle("invalid", message !== "");
+}
+
+function validateForm() {
+  const name = document.getElementById("name").value.trim();
+  const email = document.getElementById("email").value.trim();
+  const message = document.getElementById("message").value.trim();
+  const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  let valid = true;
+
+  if (name.length < 2) {
+    setError("name", "Name must be at least 2 characters");
+    valid = false;
+  } else {
+    setError("name", "");
+  }
+
+  if (!emailPattern.test(email)) {
+    setError("email", "Enter a valid email address");
+    valid = false;
+  } else {
+    setError("email", "");
+  }
+
+  if (message.length < 10) {
+    setError("message", "Message must be at least 10 characters");
+    valid = false;
+  } else {
+    setError("message", "");
+  }
+
+  return valid;
+}
+
+contactForm.addEventListener("submit", (e) => {
+  e.preventDefault();
+  const status = document.getElementById("form-status");
+  if (validateForm()) {
+    status.textContent = "Thanks! Your message was validated.";
+    contactForm.reset();
+  } else {
+    status.textContent = "";
+  }
+});
