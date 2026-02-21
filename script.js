@@ -327,3 +327,12 @@ function showGreeting() {
 }
 
 showGreeting();
+
+// ---------- Shortcut: press / to focus the task input ----------
+document.addEventListener("keydown", (e) => {
+  const typing = ["INPUT", "TEXTAREA"].includes(e.target.tagName);
+  if (e.key === "/" && !typing) {
+    e.preventDefault();
+    todoInput.focus();
+  }
+});
