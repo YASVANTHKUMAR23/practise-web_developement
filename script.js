@@ -340,17 +340,33 @@ document.addEventListener("keydown", (e) => {
 // ---------- Fetch users ----------
 const loadUsersBtn = document.getElementById("load-users");
 const userList = document.getElementById("user-list");
+const userStatus = document.getElementById("user-status");
 
 async function loadUsers() {
-  const response = await fetch("https://jsonplaceholder.typicode.com/users");
-  const users = await response.json();
+  userStatus.textContent = "Loading...";
+  userStatus.classList.remove("error-text");
+  loadUsersBtn.disabled = true;
 
-  userList.innerHTML = "";
-  users.forEach((user) => {
-    const li = document.createElement("li");
-    li.textContent = user.name + " (" + user.email + ")";
-    userList.appendChild(li);
-  });
+  try {
+    const response = await fetch("https://jsonplaceholder.typicode.com/users");
+    if (!response.ok) {
+      throw new Error("Request failed with status " + response.status);
+    }
+    const users = await response.json();
+
+    userList.innerHTML = "";
+    users.forEach((user) => {
+      const li = document.createElement("li");
+      li.textContent = user.name + " (" + user.email + ")";
+      userList.appendChild(li);
+    });
+    userStatus.textContent = "Loaded " + users.length + " users";
+  } catch (err) {
+    userStatus.textContent = "Could not load users: " + err.message;
+    userStatus.classList.add("error-text");
+  } finally {
+    loadUsersBtn.disabled = false;
+  }
 }
 
 loadUsersBtn.addEventListener("click", loadUsers);

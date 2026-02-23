@@ -382,3 +382,17 @@ body.dark .contact textarea {
   padding: 6px 0;
   border-bottom: 1px solid #eee;
 }
+
+.status {
+  margin-top: 10px;
+  color: #666;
+}
+
+.status.error-text {
+  color: #e74c3c;
+}
+
+.users button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
