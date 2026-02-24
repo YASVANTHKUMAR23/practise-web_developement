@@ -371,3 +371,13 @@ async function loadUsers() {
 
 loadUsersBtn.addEventListener("click", loadUsers);
 // ---------- end fetch users ----------
+
+// ---------- Search loaded users ----------
+const userSearch = document.getElementById("user-search");
+
+userSearch.addEventListener("input", () => {
+  const query = userSearch.value.toLowerCase();
+  userList.querySelectorAll("li").forEach((li) => {
+    li.style.display = li.textContent.toLowerCase().includes(query) ? "" : "none";
+  });
+});
