@@ -403,3 +403,11 @@ body.dark .contact textarea {
   border: 1px solid #bbb;
   border-radius: 4px;
 }
+
+.todo li .edit-btn {
+  float: right;
+  margin-right: 6px;
+  padding: 4px 8px;
+  font-size: 12px;
+  background: #f39c12;
+}

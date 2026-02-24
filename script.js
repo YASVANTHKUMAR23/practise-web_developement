@@ -160,7 +160,16 @@ function render() {
       }
     });
 
+    const editBtn = document.createElement("button");
+    editBtn.textContent = "Edit";
+    editBtn.className = "edit-btn";
+    editBtn.addEventListener("click", (e) => {
+      e.stopPropagation();
+      editTodo(index);
+    });
+
     li.appendChild(delBtn);
+    li.appendChild(editBtn);
     todoList.appendChild(li);
   });
 
@@ -188,6 +197,14 @@ function addTodo() {
 function toggleTodo(index) {
   todos[index].done = !todos[index].done;
   render();
+}
+
+function editTodo(index) {
+  const newText = prompt("Edit task", todos[index].text);
+  if (newText !== null && newText.trim() !== "") {
+    todos[index].text = newText.trim();
+    render();
+  }
 }
 
 function deleteTodo(index) {
