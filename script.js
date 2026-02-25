@@ -403,3 +403,9 @@ userSearch.addEventListener("input", () => {
     li.style.display = li.textContent.toLowerCase().includes(query) ? "" : "none";
   });
 });
+
+// ---------- Mark all todos as done ----------
+document.getElementById("mark-all").addEventListener("click", () => {
+  todos.forEach((todo) => (todo.done = true));
+  render();
+});

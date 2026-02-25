@@ -416,3 +416,9 @@ body.dark .contact textarea {
   margin-top: 10px;
   background: #7f8c8d;
 }
+
+.todo .mark-all {
+  margin-top: 10px;
+  margin-left: 6px;
+  background: #16a085;
+}
