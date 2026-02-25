@@ -223,6 +223,11 @@ document.querySelectorAll(".filters button").forEach((btn) => {
   });
 });
 
+document.getElementById("clear-done").addEventListener("click", () => {
+  todos = todos.filter((todo) => !todo.done);
+  render();
+});
+
 todoBtn.addEventListener("click", addTodo);
 todoInput.addEventListener("keydown", (e) => {
   if (e.key === "Enter") addTodo();

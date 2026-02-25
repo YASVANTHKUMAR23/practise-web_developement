@@ -411,3 +411,8 @@ body.dark .contact textarea {
   font-size: 12px;
   background: #f39c12;
 }
+
+.todo .clear-done {
+  margin-top: 10px;
+  background: #7f8c8d;
+}
