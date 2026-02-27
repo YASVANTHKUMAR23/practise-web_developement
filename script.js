@@ -428,3 +428,11 @@ const observer = new IntersectionObserver(
 );
 
 sections.forEach((section) => observer.observe(section));
+
+// ---------- Counter shortcuts: + and - ----------
+document.addEventListener("keydown", (e) => {
+  const typing = ["INPUT", "TEXTAREA"].includes(e.target.tagName);
+  if (typing || !incBtn || !decBtn) return;
+  if (e.key === "+") incBtn.click();
+  if (e.key === "-") decBtn.click();
+});
