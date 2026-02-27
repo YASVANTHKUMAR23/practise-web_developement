@@ -422,3 +422,8 @@ body.dark .contact textarea {
   margin-left: 6px;
   background: #16a085;
 }
+
+.top-link {
+  color: #fff;
+  font-size: 13px;
+}
