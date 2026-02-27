@@ -427,3 +427,8 @@ body.dark .contact textarea {
   color: #fff;
   font-size: 13px;
 }
+
+.site-header nav a.active {
+  border-bottom-color: #3498db;
+  font-weight: bold;
+}

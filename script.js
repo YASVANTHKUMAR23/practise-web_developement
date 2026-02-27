@@ -409,3 +409,22 @@ document.getElementById("mark-all").addEventListener("click", () => {
   todos.forEach((todo) => (todo.done = true));
   render();
 });
+
+// ---------- Highlight the nav link of the visible section ----------
+const sections = document.querySelectorAll("section[id]");
+const navLinks = document.querySelectorAll(".site-header nav a");
+
+const observer = new IntersectionObserver(
+  (entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        navLinks.forEach((link) => {
+          link.classList.toggle("active", link.getAttribute("href") === "#" + entry.target.id);
+        });
+      }
+    });
+  },
+  { threshold: 0.5 }
+);
+
+sections.forEach((section) => observer.observe(section));
