@@ -1,3 +1,5 @@
+// Practice site scripts: counter, todo list, dark mode, contact form and fetch demo.
+// Each section is wrapped in comment markers so it is easy to find.
 
 "use strict";
 
