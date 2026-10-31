@@ -1,0 +1,56 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+#head{
+    text-align: center;
+    margin-top: 20px;
+}
+
+
+#button{
+    background: white;
+    color: rgb(2, 128, 121);
+    margin-top: 20px;
+    margin-left:30px;
+    padding: 5px;
+
+
+    width: 80px;
+    border-radius: 8px;
+    border-color: whitesmoke;
+    font-weight: 550;
+    font-size: medium;
+
+}
+#Result{
+display: none;
+
+    background:rgba(235, 231, 231, 0.853);
+    width: 500px;
+    height: 500px;
+    margin: 60px;
+    padding: 30px;
+    border-radius: 20px;
+    
+}
+
+.input{
+padding: 30px;
+}
+
+#nametext{
+    padding: 20px;
+}
+
+#nameinp{
+    padding: 5px;
+    border-radius: 10px;
+}
+
+#submit{
+    margin-left: 10px;
+    border-radius: 10px;
+    padding: 5px;
+}
